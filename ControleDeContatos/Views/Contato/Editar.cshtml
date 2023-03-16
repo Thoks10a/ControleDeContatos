@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Editar contato";
+}
+<div class="text-center">
+    <h1 class="display-4">Editar contato</h1>
+</div>
+<form>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome" style="margin-bottom: 20px;">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" style="margin-bottom: 20px;">
+    </div>
+    <div class="form-group">
+        <label for="celular">Numero de celular</label>
+        <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Numero de celular">
+    </div>
+    <div class="form-group" style="margin:  10px 0 0 0;">
+        <button type="submit" class="btn btn-primary col-12" style="margin-bottom: 10px;">Alterar</button>
+        <a asp-controller="Contato" asp-action="Index" class="btn btn-secondary col-12">Voltar</a>
+        <!-- Existe mais de um jeito de fazer a rota o jeito de cima e esse href="/Contato/Index"-->
+    </div>
+</form>
+
