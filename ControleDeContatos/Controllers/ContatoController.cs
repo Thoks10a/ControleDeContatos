@@ -10,7 +10,11 @@ namespace ControleDeContatos.Controllers
         public ContatoController(IContatoRepositorio contatoRepositorio) { 
             _contatoRepositorio = contatoRepositorio;
         }
-        public IActionResult Index() => View();
+
+        public IActionResult Index() {
+            List<ContatoModel> contatos = _contatoRepositorio.BuscarTodos();
+            return View(contatos);
+        }
 
         public IActionResult Criar() => View();
 
