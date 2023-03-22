@@ -18,9 +18,17 @@ namespace ControleDeContatos.Controllers
 
         public IActionResult Criar() => View();
 
-        public IActionResult Editar() => View();
+        public IActionResult Editar(int id)
+        {
+            ContatoModel contato = _contatoRepositorio.ListarPorId(id);
+            return View(contato);
+        }
 
-        public IActionResult ApagarConfirmacao() => View();
+        public IActionResult ApagarConfirmacao()
+        {
+
+            return View();
+        }
 
         public IActionResult Apagar() => View();
 

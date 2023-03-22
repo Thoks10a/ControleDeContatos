@@ -1,5 +1,7 @@
 ﻿using ControleDeContatos.Data;
 using ControleDeContatos.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ControleDeContatos.Repositorio
 {
@@ -9,6 +11,11 @@ namespace ControleDeContatos.Repositorio
         private readonly BancoContext _bancoContext;
         public ContatoRepositorio(BancoContext bancoContext) {
             _bancoContext = bancoContext;
+        }
+
+        public ContatoModel ListarPorId(int id)
+        {
+            return _bancoContext.Contatos.FirstOrDefault(x => x.Id == id);
         }
 
         public List<ContatoModel> BuscarTodos()
